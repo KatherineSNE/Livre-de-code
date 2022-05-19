@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Gelasio:wght@600&family=Prata&family=Roboto:wght@300&display=swap');
+:root{
+--backgroundColor:#c6c6c6;
+--navFont:'Prata', serif;
+--textFont:'Gelasio', serif;
+--headingFont:'Roboto Serif', serif;
+--labelSize:1.5rem;
+--inputText:1.2rem;
+--inputRad:20px;
+--inputColor:#283044;
+--h6:1.3rem;
+}
+
+body{
+    margin:0;
+    padding: 0;
+}
+header>div{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+header>div>img {
+    height: 25rem;
+    width: 25rem;
+}
+nav,footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 4vh;
+    width: 100%;
+    background-color: lightgray;
+}
+
+a{
+    text-decoration: none;
+    color: var(--litest);
+}
+
+
+li{
+    font:bold 1.4rem var(--navFont);
+    list-style: none;
+}
+
+
+h1{
+    font-family: var(--headingFont);
+    text-align: center;
+    color: var(--licolour);
+    font-weight: none;
+    margin-top: 8vh;    
+}
+
+
+footer>a{
+    font:bold var(--headingFont);
+    font-size: 1.4rem;
+    color: var(--litest);
+}
+span{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+div{
+    margin-right: 5vw;
+}
+
+p{
+    font-family: var(--navFont);
+    color: var(--licolour);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+
+
+p:nth-of-type(2){
+    color: red;
+    font-family:var(--textFont);
+    font-weight: bold;
+}
+
+h6{
+    font: bold var(--h6) var(--textFont);        
+    height: 2vh;
+}
+
+
+input,textarea{
+    text-align: center;
+    font: 400 var(--inputText) var(--headingFont);
+    background-color: lightgray;
+    outline: none;
+    border: none;
+    width:20vw;
+}
+
+p{
+    font-family: var(--navFont);
+    color: var(--licolour);
+    font-size: 1.5rem;
+    text-align: center;
+}
+.section_grid{
+    display: grid;
+    grid-template-columns:0.1fr 1fr;
+    padding: 4vh;
+    gap: 1vw 2vh;
+} 
+
+section>img{
+    grid-column: 1;
+    grid-row: auto;
+    height: 9rem;
+    width: 9rem;
+    padding:1rem;
+    border: solid grey 2px;
+    border-radius: 50%;
+    background-color: white;
+    justify-self: center;
+    align-self: center;
+}
+
+section>img:hover{
+   
+    animation-name: photo;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    
+}
+
+@keyframes photo {
+    from{
+        transform:scale(1.0)
+    }
+    
+    to{
+        transform: scale(3.0);
+        margin-left:8rem;
+          
+    }
+    
+}
+
+form{
+    display: grid;
+    grid-template-columns:0.5fr 0.2fr 1fr 1fr 1fr 1fr 1fr 0.7fr 0.2fr 0.2fr 0.2fr;
+    grid-template-rows: auto;
+    gap: 2vw 2vh;
+    padding: 4vh;
+    border-bottom: solid gray 2px;
+
+}
+form>input[name=choose]{
+    grid-column: 1;
+    height: 2rem;
+    width: 2rem;
+    align-self: center;
+}
+form>input[name=id_product]{
+    grid-column: 2;
+    grid-row: auto;
+    border-radius: 10px;
+    width: 4vw;
+    justify-self: center;
+    align-self: center;
+    font: bold 1.4rem var(--textFont);
+
+}
+form>input[name=image_product]{
+    grid-column: 3;
+    grid-row: auto;
+    width: 15vw;
+    border-radius: 10px;
+    justify-self: center;
+    align-self: center;
+    font: bold 1.4rem var(--textFont);
+    
+
+}
+form>input[name=price_product]{
+    grid-column: 4;
+    grid-row: auto;
+    height: 3.45vh;
+    width: 3vw;
+    border-radius: 10px;
+    justify-self: center;
+    align-self: center;
+    font: bold 1.4rem var(--textFont);
+    
+
+}
+form>textarea[name=description_product]{
+    grid-column: 5;
+    grid-row: auto;
+    border-radius: 10px;
+    width: 7vw;
+    justify-self: center;
+    align-self: center;
+    font: bold 1.4rem var(--textFont);
+
+}
+form>input[name=length_product]{
+    grid-column: 6;
+    grid-row: auto;
+    border-radius: 10px;
+    width: 7vw;
+    justify-self: center;
+    align-self: center;
+    font: bold 1.4rem var(--textFont);
+
+}
+
+form>input[name=width_product]{
+    grid-column: 7;
+    grid-row: auto;
+    border-radius: 10px;
+    width: 7vw;
+    justify-self: center;
+    align-self: center;
+    font: bold 1.4rem var(--textFont);
+
+}
+form>input[name=materials_product]{
+    grid-column: 8;
+    grid-row: auto;
+    border-radius: 10px;
+    width: 7vw;
+    justify-self: center;
+    align-self: center;
+    font: bold 1.4rem var(--textFont);
+
+}
+form>input[name=type_product]{
+    grid-column: 9;
+    grid-row: auto;
+    border-radius: 10px;
+    width: 2vw;
+    justify-self: center;
+    align-self: center;
+    font: bold 1.4rem var(--textFont);
+
+}
+form>input[name=visibility_product]{
+    grid-column: 10;
+    grid-row: auto;
+    border-radius: 10px;
+    width: 2vw;
+    justify-self: center;
+    align-self: center;
+    font: bold 1.4rem var(--textFont);
+}
+
+
+form>input[type=submit]{
+    grid-column: 11;
+    grid-row: auto; 
+    width:6vw;
+    border-radius:10px;
+    font:bold 1.4rem var(--textFont);
+    text-transform: uppercase;
+    padding:0.5rem;
+    cursor: pointer;
+    justify-self: center;
+    align-self: center;
+    background-color: rgb(244, 27, 27);
+}
+
+
+
+form{
+    grid-column: 2;
+    grid-row: auto;
+}
+

@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Fredoka+One&family=Righteous&display=swap');
+
+:root{
+    --yellow:rgb(221, 165, 9);
+    --green:rgb(72, 129, 11);
+    --blue:rgb(19, 134, 201);
+    --purple:rgb(76, 6, 185);
+    --newpink: rgb(196, 14, 81);
+    --bgcolor:rgb(240, 248, 248);
+    --audio:'Audiowide', cursive;
+    --fredoka:'Fredoka One', cursive;
+    --right:'Righteous', cursive;
+}
+html{
+    background-color: black;
+}
+/* hide scrollbar but allow scrolling */
+body {
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll; 
+}
+
+body::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
+section{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+form{
+    display: flex;
+    flex-direction:column;
+}
+
+form>label{
+    font: 1.6rem var(--right);
+    text-align: left;
+    color: var(--blue);
+
+}
+/** stop background changing when form on autocomplete*/
+input:-webkit-autofill {       
+    transition: all 0s 50000s;     
+  }
+
+
+input{
+    border: solid 2px var(--purple);
+    caret-color: var(--blue);
+    color: var(--blue);
+    height:4vh;
+    width: 30vw;
+    border-top-right-radius:20px;
+    border-bottom-left-radius: 20px;
+    outline: none;
+    font-size:1.2rem;
+    font-family: var(audio);
+    background-color: transparent;
+    margin-bottom: 3vh;
+    text-align: center;
+}
+
+form>div{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+button{
+    font-family: var(--fredoka);
+    font-size: 1rem;
+    height:5vh;
+    border-top-right-radius:20px;
+}
+button{
+    font-family: var(--fredoka);
+    font-size: 1rem;
+    height:5vh;
+    border-top-right-radius:20px;
+    border-bottom-left-radius: 20px;
+}
+
+button:nth-of-type(1){
+    background-color: var(--green);
+}
+button:nth-of-type(2){
+    background-color: var(--newpink);
+}
+
+button:nth-of-type(3){
+    background-color: var(--yellow);
+}

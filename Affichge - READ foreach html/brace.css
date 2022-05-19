@@ -1,0 +1,406 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Gelasio:wght@600&family=Prata&family=Roboto:wght@300&display=swap');
+:root{
+    /**text variables*/
+    --navFont:'Prata', serif;
+    --textFont:'Roboto', sans-serif;
+    --headingFont:'Gelasio', serif;
+    --textColor:#575f70;
+    
+    /**positioning & weight*/
+    --b:bold;
+    --c:center;
+    --sa:space-around;
+    --f:flex;
+    --fdc:column;
+    --g:grid;
+    --a:auto
+    --compW:100vw;
+    --gridcol:1fr 1fr 1fr;
+
+    /**span colour*/
+     --green:#668a29; 
+     --grey:gray;
+
+    /**img border&color*/
+    --imgrad:50%;
+    --imgpad:0.7rem;
+    --imgBGcol:white;
+    --borderpx:2px;
+    --border:solid gray 1px;
+
+
+
+    /**desktop sizing*/
+    --desimgH:13rem;
+    --desimgW:13rem;
+    --destext:0.9rem;
+    --des-a:1.8rem;
+    --desH2:2.2rem;
+    --desArticleW:15vw;
+    --desPH:20%;
+    --desPfont:bold 1.1rem 'Gelasio', sans-serif;
+
+
+    /**tablette sizing*/
+    --tabtext:1rem;
+    --tab-a:1.5rem;
+    --tabH2:2rem;
+    --tabH2marg: 0 0 3vh 0;
+    --tabInputH:3vh;
+    --tabInputW:15vw;
+    --tabArticleW:60%;
+    --tabPH:30%;
+
+    /**mobile sizing*/
+    --mobtext:0.8rem;
+    --mob-a:0.8rem;
+    --mobH2:1rem;
+    --mobInputW:30vw;
+    --mobP-H:40%;
+
+    /**tablet and mobile image size*/
+    --tabImgH:9rem;
+    --tabImgW:9rem;
+    --mobImgH:8rem;
+    --mobImgW:8rem; 
+
+}
+/*?------------------------------------------------*/
+/*?       BOUTIQUE MODE DESKTOP
+/*?------------------------------------------------*/
+
+span{
+    display: var(--f);
+    height: 4vh;
+    width: var(--compW);
+    margin-top: 3vh;
+    justify-content: var(--sa);
+    align-items: var(--c);
+    background-color: var(--imgBGcol);
+     
+    }
+
+span>a{
+    font:bold var(--des-a) var(--textFont);
+    color: var(--textColor);
+    border-top: var(--border);
+    border-bottom: var(--border); 
+
+}
+
+span>a:hover{
+    color:var(--grey);
+}
+
+
+
+h2{
+    font: bold italic var(--desH2) var(--headingFont);
+    color:rgb(47, 45, 45);
+    text-align: var(--c);
+    margin:10vh 0 10vh 0;
+}
+
+
+.normal{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-rows: auto;
+    width: var(--compW);
+}
+
+
+article{
+    display: var(--f);
+    flex-direction:var(--fdc) ;
+    padding:1rem 1rem 0rem 1rem;
+    width: var(--desArticleW);
+    margin-bottom: 10vh;
+    justify-self: var(--c);
+    border-bottom:var(--border);
+    align-items: center;
+    grid-column: auto;
+    grid-row: auto;
+}
+
+article>img{
+    display: var(--f);
+    height: var(--desimgH);
+    width: var(--desimgW);
+    border-radius: var(--imgrad);
+    border: var(--border);
+    padding:var(--imgpad); 
+    background-color: var(--imgBGcol);
+    align-self: var(--c);    
+}
+
+article>img:hover{
+    animation-name: photo;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes photo {
+    from{
+        transform:scale(1.0); 
+    }
+    
+    to{
+        transform: scale(2.7);
+          
+    }
+    
+}
+
+/** description product */
+article>p:nth-of-type(1){
+    font: var(--b) 1.5rem var(--textFont);
+    color: var(--textColor);
+    height: var(--desPH);
+}
+
+article>p:nth-of-type(3){
+    margin:0 0 2vh 0;
+}
+
+article>p:nth-of-type(4){
+    margin:0 0 2vh 0;
+}
+
+/**length width materials*/
+article>p{
+    font: var(--desPfont);
+    color:var(--textColor);
+    text-align: var(--c);  
+    
+}
+
+/**product id price submit*/
+article>form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+/**product ref div*/
+article>form>div{
+    height: auto;
+    width:auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+/**prod ref text*/
+div>label{
+    font: var(--desPfont);
+    color: var(--textColor);
+    margin-left: 0.3vw;
+}
+/** prod id from json*/
+form>div>input[name=prodid_basket]{
+    width: 2vw;
+    border: none;
+    outline: none;
+    font: var(--desPfont);
+    color: var(--textColor);
+    padding: 0;
+
+}
+
+
+form>div>input[name="euro"]{
+    font:bold 2rem var(--textFont);
+    color: var(--textColor);
+    width: 2vw;
+    margin: 2vh 0 2vh 0;
+    border: none;
+}
+
+/** price from json */
+form>div>input[name=price_basket]{
+    font: bold 2rem var(--headingFont);
+    width: 2.65vw;
+    margin: 2vh 0 2vh 0;
+    text-align:end;
+    color: var(--textColor);
+    border: none;
+    outline: none;
+    
+}
+
+/** button add to basket*/
+article>form>input[type=submit]{
+    height: 6vh;
+    width: 10rem;
+    margin: 1.5vh 0 5vh 0;
+    border-radius: 10px;
+    font: bold 1.1rem var(--textFont);
+    color: var(--licolour);
+    background-color: var(--green);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/*?------------------------------------------------*/
+/*?       BOUTIQUE MODE TABLETTE
+/*?------------------------------------------------*/
+@media only screen and (max-width:1280px){
+    
+    span{
+        align-items: var(--c);
+    }
+
+    span>a{
+        font-size:var(--tab-a);
+    }
+
+    h2{
+        font-size: var(--tabH2);
+        margin: var(--tabH2marg)
+    }
+
+    article>img{
+        height: var(--tabImgH);
+        width: var(--tabImgW);
+        margin-bottom: 3vh;
+    }
+
+    article{
+        width: var(--tabArticleW);
+    }
+    
+    article>p{
+        font-size:var(--tabtext)
+    }
+
+    article>p:nth-of-type(1){
+        height: var(--tabPH);
+    }
+
+    article>p:nth-of-type(5){
+        font-size:0.7rem;
+    }
+
+    article>p:nth-of-type(6){
+        font-size: var(--tabH2);
+        margin-top: 2vh;
+    }
+
+
+#signin{      
+    font-size:1.2rem;
+    color:var(--green);
+    margin-top:-5vh;
+}
+}
+
+/*?------------------------------------------------*/
+/*?       BOUTIQUE MODE NEST  *****1024****
+/*?------------------------------------------------*/
+ 
+@media only screen and (max-width:1024px){
+    span{
+        margin-top: 6vh;
+    }
+
+    h2{
+        margin-top: 8vh;
+    }
+    
+    form>div>input[name=price_basket]{
+        width: 3.8vw;
+        font-size: 1.7rem;
+        }
+
+    form>div>input[name="euro"]{
+        font-size: 1.6rem;
+        }
+    
+        form>div>label{
+            font-size:0.8rem;
+        }
+        
+        form>div>input[name=prodid_basket]{
+            width: 4vw;
+            font-size:0.8rem; 
+        
+        }
+
+}
+
+/*?------------------------------------------------*/
+/*?       BOUTIQUE MODE MOBILE ****600*****
+/*?------------------------------------------------*/
+ 
+@media only screen and (max-width:600px){
+    .bra{
+        display:var(--g);
+        grid-template-columns:1fr 1fr;
+    }    
+
+    span>a{
+        font-size: var(--mobtext);
+        margin:0 0 4vh 0;
+    }
+
+    h2{
+        font-size: var(--mobH2);
+        margin-top: 2vh;
+    }
+
+    article>img{
+        height: var(--mobImgH);
+        width: var(--mobImgW);
+    }
+
+    article>p:nth-of-type(1){
+        font-size: 0.9rem;
+        height:var(--mobP-H);                
+    }
+
+    article>p:nth-of-type(2){
+        font-size:var(--mobtext);
+    }
+
+    article>p:nth-of-type(3){
+        font-size: var(--mobtext);
+    }
+    article>p:nth-of-type(4){
+        font-size: var(--mobtext);
+    }
+
+    form>div>label{
+        font-size:0.6rem;
+    }
+    /** prod id from json*/
+    form>div>input[name=prodid_basket]{
+        width: 4vw;
+        font-size:0.6rem; 
+    
+    }
+
+    
+    form>div>input[name=price_basket]{
+        width: 8vw;
+        font-size: 1.3rem;
+        }
+
+    form>div>input[name="euro"]{
+        width: 3vw;;
+        font-size: 1.3rem;
+        }
+
+    article>form>input[type=submit]{
+        width: var(--mobInputW);
+        height: 4vh;
+        font-size: 0.8rem;
+    }
+    #signin{      
+        font-size: 0.8rem; 
+    }
+} 
